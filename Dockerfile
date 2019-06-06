@@ -7,4 +7,6 @@ RUN helm plugin install https://github.com/rimusz/helm-tiller
 
 COPY init.sh /init.sh
 
-ENTRYPOINT ["/bin/bash"]
+RUN chmod +x /init.sh
+
+ENTRYPOINT ["/bin/bash", "-l", "-c"]
